@@ -1,4 +1,4 @@
-#Discover Applications and uninstall unwanted
+##Discover Applications and uninstall unwanted
 ```
 wmic /node:@list.txt /output:apps_list.html product get name,version,vendor /format:htable
 ```
@@ -13,4 +13,4 @@ or, when you want to uninstall a whole program suite:
 wmic /node:"[node name]" product where vendor="[vendor name]" call uninstall
 ```
 
-Obviously, as shown before, you can automate unistall replacing "nome name" with a list of them
+Obviously, as shown before, you can automate unistall replacing "node name" with a list of them
