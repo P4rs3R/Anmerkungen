@@ -1,3 +1,5 @@
+#Discover Applications and uninstall unwanted
+
 wmic /node:@list.txt /output:apps_list.html product get name,version,vendor /format:htable
 
 //When you find something you want to uninstall, just launch:
