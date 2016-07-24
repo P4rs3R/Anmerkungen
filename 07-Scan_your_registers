@@ -2,7 +2,7 @@ Security events are stored *by default* in the file:
 ```
 %SystemRoot%\System32\Winevt\Logs\Security.evtx
 ```
-And you can read it usually by `%SystemRoot%\System32\eventvwr.msc`, the Windows Event viewer.
+And you can read it usually by `%SystemRoot%\System32\eventvwr.msc`, the [Windows Event viewer](https://en.wikipedia.org/wiki/Event_Viewer).
 
 There's an example of XML code you can use within the Windows Event viewer filter in order to find who did a remote access on your hosts, excluding you:
 ```
