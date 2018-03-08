@@ -8,7 +8,7 @@ apt-get update && apt-get install elasticsearch
 service elasticsearch start && update-rc.d elasticsearch defaults 95 10
 curl -XGET 'localhost:9200/?pretty'
 ```
-The last command is a test: if it works, everything's fine with elasticsearch
+The last command is a test: if it works, showing you info such as version and cluster name, everything's fine with elasticsearch
 ```
 apt-get install kibana
 service kibana start && update-rc.d kibana defaults 95 10
