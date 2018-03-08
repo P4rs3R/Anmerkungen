@@ -1,5 +1,5 @@
 
-##Discover which services are running and allow/stop them
+## Discover which services are running and allow/stop them
 You can see services' status:
 ```
 %windir%\system32\services.msc
@@ -12,7 +12,7 @@ Stopping a service makes not only your hosts faster, but makes more difficult - 
 :microscope: Take your time to find which service is absolutely needed and disallow all the rest.
 ---
 
-##Discover local administrators
+## Discover local administrators
 ```
 wmic /failfast:ON /node:@nodes.txt /output:local_admins.csv path win32_groupuser where (groupcomponent="win32_group.name=\"administrators\",domain=\"PC\"") get /format:csv
 ```
