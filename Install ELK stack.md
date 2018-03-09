@@ -35,5 +35,6 @@ systemctl start logstash.service
 ```
 ## Extra: Beats (monitoring internal networks)
 This is an example, depending on beat & version you want to install
-```curl -L -O https://artifacts.elastic.co/downloads/beats/heartbeat/heartbeat-6.2.2-amd64.deb && sudo dpkg -i heartbeat-6.2.2-amd64.deb
+```
+curl -L -O https://artifacts.elastic.co/downloads/beats/heartbeat/heartbeat-6.2.2-amd64.deb && dpkg -i heartbeat-6.2.2-amd64.deb
 ```
