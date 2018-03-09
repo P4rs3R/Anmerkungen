@@ -1,6 +1,6 @@
 ## Install ELK stack (elasticsearch)
 (Installed as `root` - tested on Debian 9.x x64). 
-Suggested order:
+[Suggested order](https://www.elastic.co/guide/en/elastic-stack/current/installing-elastic-stack.html#install-order-elastic-stack):
 ![Elastic and x-pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.2/setup/images/ElasticsearchFlow.jpg)
 ![Kibana and x-pack](https://www.elastic.co/guide/en/kibana/6.2/setup/images/KibanaFlow.jpg)
 ![Logstash and x-pack](https://www.elastic.co/guide/en/logstash/6.2/setup/images/LogstashFlow.jpg)
@@ -30,7 +30,10 @@ elasticsearch.password: "kibanapassword"
 service kibana start && update-rc.d kibana defaults 95 10
 
 apt-get install logstash
+cd /usr/share/logstash && bin/logstash-plugin install x-pack
 systemctl start logstash.service
 ```
-## Configuration
-
+## Extra: Beats (monitoring internal networks)
+This is an example, depending on beat & version you want to install
+```curl -L -O https://artifacts.elastic.co/downloads/beats/heartbeat/heartbeat-6.2.2-amd64.deb && sudo dpkg -i heartbeat-6.2.2-amd64.deb
+```
