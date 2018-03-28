@@ -16,9 +16,9 @@ Then:
 - [For the last sector, you can leave the default number, tipically the last one possible]
 - Now the Linux partition is created
 -`N` -important: do NOT remove the LVM2_member signature, otherwise next boot will load the grub recovery utility in order to find the bootable partition
--`a` to toggle the bootable flag on the new /dev/sda1
--`w` to write on disk
--`sudo reboot`
+- `a` to toggle the bootable flag on the new /dev/sda1
+- `w` to write on disk
+- `sudo reboot`
 - `sudo resize2fs -f /dev/sda1` <-- this may not work, so:
 - `sudo pvs` to check PSize and PFree
 - `sudo pvresize /dev/sda1`   ----resize the physical volume
@@ -37,3 +37,8 @@ auto eth1
 iface eth1 inet dhcp
 ```
 ---------restart networking (e.g.: sudo /etc/init.d/networking restart)
+## Update MISP
+After updating via web GUI (or git), maybe also necessary:
+```
+root@host:/var/www/MISP# git submodule update --init --force
+```
