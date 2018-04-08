@@ -12,9 +12,12 @@ echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | tee -a /e
 apt-get update && apt-get install elasticsearch
 cd /usr/share/elasticsearch && bin/elasticsearch-plugin install x-pack
 service elasticsearch start && update-rc.d elasticsearch defaults 95 10
-curl -XGET 'localhost:9200/?pretty'
 ```
-The last command is a test: if it works, showing you info such as version and cluster name, everything's fine with elasticsearch
+Now set credentials by:
+```
+/usr/share/elasticsearch/bin/x-pack/setup-passwords interactive
+```
+and test by opening the browser on http://localhost:9200/
 ```
 apt-get install kibana
 cd /usr/share/kibana && bin/kibana-plugin install x-pack
@@ -28,7 +31,9 @@ elasticsearch.password: "kibanapassword"
 
 ```
 service kibana start && update-rc.d kibana defaults 95 10
-
+```
+test via browser on localhost:5601
+```
 apt-get install logstash
 cd /usr/share/logstash && bin/logstash-plugin install x-pack
 systemctl start logstash.service
