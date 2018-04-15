@@ -44,5 +44,5 @@ This is an example, depending on beat & version you want to install
 curl -L -O https://artifacts.elastic.co/downloads/beats/heartbeat/heartbeat-6.2.2-amd64.deb && dpkg -i heartbeat-6.2.2-amd64.deb
 ```
 
-##Running logstash
+## Running logstash
 Make sure the folder `/usr/share/logstash/data` is writable, then you can use logstash to fill the elastic DB. For example, with the RSS plugin, creating a file rssfilter.conf as exaplined [here](https://www.elastic.co/guide/en/logstash/current/plugins-inputs-rss.html), like in this [example](https://www.exensio.de/news-medien/newsreader-blog/rss-feeds-mit-logstash-und-elasticsearch-durchsuchen). Make sure to write elastic's credentials (user and password) when you specify the host in the conf file. And then, run: `bin/logstash -f rssfilter.conf`.
